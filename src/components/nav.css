@@ -1,0 +1,44 @@
+.nav-link.link-font{
+   font-size: 18px;
+}
+
+.nav-link.active {
+   font-weight: bold;
+   scale: 1.4;
+}
+
+a:hover{
+   opacity: 1;
+}
+
+.icon-logo{
+   color: white;
+   font-size: 40px;
+   height: 80px;
+}
+
+.icon-search{
+   color: white;
+   font-size: 32px;
+   height: 80px ;
+}
+
+.container{
+   display: flex;
+   justify-content: space-between;
+}
+
+.text-center{
+   border-bottom: solid 1px rgb(213 213 213 / 90%);
+}
+@media (min-width: 992px){
+   .col-lg-0{
+      display: none;
+   }
+   .text-center{
+      text-align: center;
+      border: none;
+      margin-left: 16px;
+      margin-right: 16px;
+   }
+}
