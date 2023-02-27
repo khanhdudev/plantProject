@@ -1,22 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import NavBar from './NavBar';
-import { Col, Container, Row } from 'reactstrap';
+import { Col, Container, Row  } from 'reactstrap';
+import Jumbotron from './Jumbotron';
 
-Header.propTypes = {
-   
-};
 
 function Header() {
    return (
       <>
-         <Container className='container'>
-            <Row>
-               <Col md={6}>
+         <Container >
+            <Row style={{width: "100%"}}>
+               <Col lg={3}></Col>
+               <Col lg={6} className='d-md-none'>
+                  asdf
                </Col>
+               <Col lg={3}>
+                  
+               </Col>
+
             </Row>
          </Container>
+         {/* Navigation */}
          <NavBar />
+         {/* jumbotron */}
+         <Jumbotron />
       </>
    );
 }
