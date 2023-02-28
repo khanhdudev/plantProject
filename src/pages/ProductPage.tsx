@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import PaginationComponent from '../components/Pagination';
 import styles from './ProductPage.module.css';
-import {Card , CardBody , CardTitle , CardText , Button , CardSubtitle} from 'reactstrap';
 
 let listFilterPrice = [
    {id : 1 , price : 'lower 100.000VND'},
    {id : 2 , price : '100.000VND - 500.000VND'},
    {id : 3 , price : '500.000VND - 2.000.000VND'},
    {id : 4 , price : 'higher 2.000.000VND'}
-]
+];
 
 let listClassProduct : {id: number , class: string}[]= [
    {id : 1 , class : 'Desktop Products'},
@@ -16,27 +16,25 @@ let listClassProduct : {id: number , class: string}[]= [
    {id : 3 , class : 'Easy to grow'},
    {id : 4 , class : 'Advance product'},
    {id : 5 , class : 'Aquatic plant'}
-]
+];
 
 let listClassShow : {id: number , class: string}[]= [
    {id : 1 , class : 'New Products'},
    {id : 2 , class : 'Oldest Products'},
    {id : 3 , class : 'Price increase'},
    {id : 4 , class : 'prices decrease '}
-]
+];
+
 function ProductPage() {
    const [checked , setChecked] = useState<any>();
-   const [classifyChecked , setClassifyChecked] = useState<number>()
-   
-   const [listProduct , setListProduct] = useState<any>([])
+   const [classifyChecked , setClassifyChecked] = useState<number>();
+   const [listProduct , setListProduct] = useState<any>();
    
    useEffect(() => {
       fetch('https://jsonplaceholder.typicode.com/album/1/photos')
       .then(result => result.json())
       .then(products => setListProduct(products))
    }, []);
-
-   console.log(listProduct);
    
    return (
       <div className='container'>
@@ -100,31 +98,7 @@ function ProductPage() {
                </div>
                {/* show product */}
                <div className={`${styles['d-row']} my-2`}>
-                  {listProduct.map((product: any)=>{
-                     return(
-                        <div className="col-md-4 px-2" key={product.id}>
-                           <Card>  
-                              <CardBody>
-                                 <CardTitle tag="h5">
-                                    {product.title}
-                                 </CardTitle>
-                                 <CardSubtitle
-                                    className="mb-2 text-muted"
-                                    tag="h6"
-                                 >
-                                    Card subtitle
-                                 </CardSubtitle>
-                                 <CardText>
-                                    Some quick example text to build on the card title and make up the bulk of the card‘s content.
-                                 </CardText>
-                                 <Button>
-                                    Button
-                                 </Button>
-                              </CardBody>
-                           </Card>
-                        </div>
-                     )
-                  })}
+                  {listProduct && <PaginationComponent props={listProduct}/>}
                </div>
             </div>
          </div>

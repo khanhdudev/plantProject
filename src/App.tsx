@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import ContactPage from './pages/ContactPage';
 import HomePage from './pages/HomePage';
@@ -13,6 +14,7 @@ function App() {
         <Route path='/product' element={<ProductPage />} />
         <Route path='/contact' element={<ContactPage />} />
       </Routes>
+      <Footer />
     </>
   );
 }

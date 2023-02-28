@@ -1,7 +1,14 @@
 .jumbotron {
    padding:70px 30px 70px 30px;
    margin:0px auto;
-   background-color: #9575CD ;
+   background-image: url("https://bizweb.dktcdn.net/100/340/551/themes/736588/assets/slider_2.png?1660634576913") ;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   height: auto;
+}
+
+.top-bot-color{
    color:floralwhite;
 }
 
@@ -15,4 +22,9 @@
    padding: 50px 0px 50px 0px;
    border-bottom: 1px ridge;
    min-height:400px;
+}
+
+/* footer */
+.bg-content{
+   background-color: aliceblue;
 }
